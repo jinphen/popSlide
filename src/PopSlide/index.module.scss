@@ -1,0 +1,83 @@
+.popSlide {
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+}
+:global {
+  :local(.popSlide) {
+    &.popSlide-enter {
+      position: fixed;
+      left: var(--slideInFrom);
+      transition: all ease 0.3s;
+    }
+    &.popSlide-enter-active {
+      position: fixed;
+      left: 0;
+      transition: all ease 0.3s;
+    }
+    &.popSlide-enter-done {
+      position: fixed;
+      left: 0;
+      transition: all ease 0.3s;
+    }
+    &.popSlide-exit {
+      position: fixed;
+      left: 0;
+    }
+    &.popSlide-exit-active {
+      position: fixed;
+      left: var(--slideOutTo);
+      transition: all ease 0.3s;
+    }
+    &.popSlide-exit-done {
+      position: unset;
+      transition: all ease 0.3s;
+    }
+  }
+}
+
+
+.popSlideInner {
+  position: relative;
+}
+.popSlideOn {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  // transition: transform ease 0.3s;
+}
+.popSlideIn {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: left ease 0.3s;
+  animation: slideIn 0.3s ease;
+}
+.popSlideOut {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transition: left ease 0.3s;
+  animation: slideOut 0.3s ease;
+}
+@keyframes slideIn {
+  from {
+    left: var(--slideInFrom);
+  }
+
+  to {
+    left: var(--slideInTo);
+  }
+}
+@keyframes slideOut {
+  // from {
+  //   left: var(--slideOutFrom);
+  // }
+
+  to {
+    left: var(--slideOutTo);
+  }
+}
